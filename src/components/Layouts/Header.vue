@@ -9,3 +9,23 @@
     </div>
   </header>
 </template>
+
+<style lang="scss" scoped>
+.header {
+  margin-bottom: 48px;
+
+  &__logo {
+    padding-top: 16px;
+
+    &-link {
+      display: block;
+      max-width: 240px;
+      margin: 0 auto;
+    }
+
+    &-icon {
+      fill: $color-primary;
+    }
+  }
+}
+</style>

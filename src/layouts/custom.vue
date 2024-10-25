@@ -1,5 +1,11 @@
 <template>
   <div class="layout layout-custom">
-    <slot />
+    <LayoutsHeader />
+
+    <LayoutsMain>
+      <slot />
+    </LayoutsMain>
+
+    <LayoutsFooter />
   </div>
 </template>
