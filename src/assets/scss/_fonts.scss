@@ -1,0 +1,5 @@
+@use 'mixins';
+// @include mixins.font-face('SF Pro Display', 'SF Pro Display', '@/assets/fonts/SFProDisplay/Bold', 700);
+@include mixins.font-face('SF Pro Text', 'SF Pro Text', '@/assets/fonts/SFProText/Regular', 400);
+@include mixins.font-face('SF Pro Text', 'SF Pro Text', '@/assets/fonts/SFProText/Semibold', 600);
+@include mixins.font-face('SF Pro Text', 'SF Pro Text', '@/assets/fonts/SFProText/Bold', 700);

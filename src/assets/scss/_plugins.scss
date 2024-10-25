@@ -1,0 +1,12 @@
+// nuxt-icon
+.nuxt-icon {
+  display: flex;
+
+  & svg {
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    fill: inherit;
+    stroke: inherit;
+  }
+}
