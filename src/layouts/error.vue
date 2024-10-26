@@ -1,3 +1,7 @@
+<script setup>
+const { error } = defineProps(['error']);
+</script>
+
 <template>
   <div class="layout layout-error">
     <LayoutsHeader />
