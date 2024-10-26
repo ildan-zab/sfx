@@ -11,7 +11,7 @@ export const useCommentsStore = defineStore('comments', () => {
     id: null,
   });
 
-  // Функция для получения комментариев по ID поста
+  // Асинхронная функция для получения комментариев по ID поста
   async function fetchComments(postId: number) {
     try {
       const skip = (page.value - 1) * limit.value;
@@ -24,10 +24,11 @@ export const useCommentsStore = defineStore('comments', () => {
       if (!data.value) return console.log('Нет данных');
       total.value = data.value.total;
 
+      // Добавляем полученные комментарии к существующим
       comments.value =
         page.value === 1 ? data.value.comments : comments.value.concat(data.value.comments);
     } catch (error) {
-      console.error('Ошибка:', error);
+      console.error('Ошибка при получении комментариев:', error);
     }
   }
 
@@ -35,20 +36,20 @@ export const useCommentsStore = defineStore('comments', () => {
     page.value++;
   }
 
-  // Функция удаления комментария
+  // Асинхронная функция для удаления комментария по его ID
   async function removeComment(id: number) {
-    loading.value = { item: true, id };
+    loading.value = { item: true, id }; // Устанавливаем состояние загрузки для удаляемого комментария
     try {
       const { data } = await useCustomFetch<IComment>(`/comments/${id}`, { method: 'DELETE' });
       if (data.value?.isDeleted) {
-        // Поиск индекса комментария и его удаление
+        // Поиск индекса комментария и его удаление из списка
         const index = comments.value.findIndex((comment) => comment.id === id);
         if (index !== -1) comments.value.splice(index, 1);
       }
     } catch (error) {
       console.error('Ошибка удаления комментария:', error);
     } finally {
-      loading.value = { item: false, id: null };
+      loading.value = { item: false, id: null }; // Сбрасываем состояние загрузки
     }
   }
 
