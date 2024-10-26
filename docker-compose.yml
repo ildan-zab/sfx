@@ -1,0 +1,10 @@
+services:
+  client:
+    build: .
+    container_name: sfx
+    image: sfx:latest
+    restart: always
+    ports:
+      - ${PORT}:${PORT}
+    env_file:
+      - .env
