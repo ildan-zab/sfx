@@ -1,35 +1,34 @@
-# Frontend in SFX
+# SFX Project
 
-## Setup
+Проект на основе **Nuxt 3** с **Pinia**.
 
-Make sure to install dependencies:
+## Стек технологий
 
-```bash
-# npm
-npm install
-```
+- **Nuxt 3** - Основной фреймворк.
+- **Pinia** - Хранилище.
+- **Docker** - Контейнеризация проекта для удобного развертывания.
+- **TypeScript** - Статическая типизация для повышения качества кода.
+- **ESLint** и **Stylelint** - Линтеры для обеспечения стандартизации и качества кода.
+- **Prettier** - Форматирование кода.
 
-## Development Server
+## Установка и запуск
 
-Start the development server on `http://localhost:3035`:
+1. Склонируйте репозиторий:
 
-```bash
-# npm
-npm run dev
-```
+   ```bash
+   git clone https://github.com/ildan-zab/sfx.git
+   cd sfx
+   ```
 
-## Production
+2. Скопируйте файл конфигурации окружения:
 
-Build the application for production:
+   ```bash
+   cp .env.example .env
+   ```
 
-```bash
-# npm
-npm run build
-```
+3. Запустите контейнер Docker:
+   ```bash
+   make build
+   ```
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-```
+Проект будет доступен по адресу **http://localhost:3035** (если порт не изменён в .env).
