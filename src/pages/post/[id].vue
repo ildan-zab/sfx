@@ -37,7 +37,7 @@ if (!postsStore.checkPostStore(postId)) {
 }
 
 // Обработка ошибки, если пост не найден
-if (!post.value) {
+if (!post.value || Object.keys(post.value).length === 0) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Page Not Found 404',
