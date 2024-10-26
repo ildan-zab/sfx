@@ -1,5 +1,5 @@
 <template>
-  <div class="comment-date">
+  <div class="global-date">
     <time datetime="2024-10-07T20:00:00">{{ date }}</time>
   </div>
 </template>
@@ -11,7 +11,7 @@ const { date } = defineProps<{
 </script>
 
 <style lang="scss" scoped>
-.comment-date {
+.global-date {
   color: $color-border;
   font-size: $font-size-caption;
 }

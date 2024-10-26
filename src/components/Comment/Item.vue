@@ -13,7 +13,7 @@
         {{ comment.body }}
       </div>
       <div class="comment-item__bar">
-        <CommentDate date="Today" />
+        <UIDate date="Today" />
         <CommentRemove @click="removeComment(comment.id)" />
       </div>
     </div>

@@ -31,7 +31,7 @@
           />
         </div>
         <PostCommentsLink :id="post.id" />
-        <PostDate date="Today" />
+        <UIDate date="Today" />
         <PostTags :tags="post.tags" />
       </div>
     </div>
