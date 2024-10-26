@@ -24,6 +24,20 @@ h3 {
   margin-right: auto;
 }
 
+.btn {
+  position: relative;
+  padding: 10px 25px;
+  background-color: $color-secondary-light;
+  transition: all cubic-bezier(0.3, 0, 1, 1) 0.1s;
+  border-radius: 5px;
+  font-size: $font-size-caption;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+
 @media (max-width: 706px) {
   .container {
     padding: 0 15px;
